@@ -4,7 +4,6 @@ import jwt from "jsonwebtoken";
 import User from "../../database/models/user.js";
 import dotenv from "dotenv";
 import connectDB from "../../database/dbconfig.js";
-
 dotenv.config();
 connectDB();
 

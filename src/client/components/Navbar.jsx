@@ -14,17 +14,17 @@ const Navbar = () => {
 
                 <ul className={`flex gap-20 ${isLoggedIn ? "block" : "hidden"}`}>
                     <li>
-                        <a href="#" className="hover:text-blue-600">
+                        <a href="/" className="hover:text-blue-600">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="#" className="hover:text-blue-600">
+                        <a href="/create-event" className="hover:text-blue-600">
                             Create Event
                         </a>
                     </li>
                     <li>
-                        <a href="#" className="hover:text-blue-600">
+                        <a href="/profile" className="hover:text-blue-600">
                             My Profile
                         </a>
                     </li>

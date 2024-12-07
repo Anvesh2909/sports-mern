@@ -20,10 +20,19 @@ const Login = () => {
                 password,
             });
 
+            // Simulate login data
+            const mockUser = {
+                name: "John Doe",
+                email: email,
+                createdAt: "2024-12-01T10:00:00",
+            };
+
             localStorage.setItem("token", response.data.token);
             const profilePictureUrl = response.data.profilePicture || null;
             login(profilePictureUrl);
-            navigate("/");
+
+            // Navigate to profile with user data
+            navigate("/profile", { state: { user: mockUser } });
         } catch (err) {
             setError("Invalid credentials or server error");
         }

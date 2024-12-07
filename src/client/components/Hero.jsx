@@ -1,6 +1,6 @@
 import EventsCard from './EventsCard';
 import TopMatchesCard from './TopMatchesCard';
-
+import { Link } from 'react-router-dom';
 const Hero = () => {
     const topMatches = [
         { name: 'Team A vs Team B', score: '2-1', image: '/assets/images/match-1.jpg' },
@@ -10,7 +10,7 @@ const Hero = () => {
     const popularEvents = [
         {
             _id: '1',
-            imageUrl: '/assets/images/event-1.jpg',
+            imageUrl: '/assets/images/sp-2.jpg',
             title: 'Marathon Championship',
             startDateTime: '2024-12-15T09:00:00',
             isFree: false,
@@ -20,7 +20,7 @@ const Hero = () => {
         },
         {
             _id: '2',
-            imageUrl: '/assets/images/event-2.jpg',
+            imageUrl: '/assets/images/sp-3.jpeg',
             title: 'Football Finals',
             startDateTime: '2024-12-20T18:00:00',
             isFree: true,
@@ -30,12 +30,12 @@ const Hero = () => {
         },
         {
             _id: '3',
-            imageUrl: '/assets/images/event-3.jpg',
-            title: 'Cycling Challenge',
+            imageUrl: '/assets/images/sp-1.webp',
+            title: 'Soccer Challenge',
             startDateTime: '2024-12-25T07:30:00',
             isFree: false,
             price: 1500,
-            category: { name: 'Cycling' },
+            category: { name: 'Soccer' },
             organizer: { firstName: 'Bob', lastName: 'Johnson', _id: '125' },
         },
     ];
@@ -46,7 +46,7 @@ const Hero = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="flex flex-col">
                             <h1 className="text-6xl font-bold mb-4 leading-tight">
-                                Host, Connect, Celebrate: <br />
+                                Host, Connect, Celebrate: <br/>
                                 Your Events, Our Platform!
                             </h1>
                             <p className="text-lg mb-8 text-gray-600">
@@ -81,7 +81,9 @@ const Hero = () => {
                     <h2 className="text-4xl font-bold mb-8 text-center">Popular Events</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {popularEvents.map((event) => (
-                            <EventsCard key={event._id} event={event} hasOrderLink={false} hidePrice={false} />
+                            <Link to={`/event/${event._id}`} key={event._id}> {/* Wrap with Link */}
+                                <EventsCard event={event} hasOrderLink={false} hidePrice={false}/>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -91,7 +93,7 @@ const Hero = () => {
                     <h2 className="text-4xl font-bold mb-8 text-center">Top Matches</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {topMatches.map((match, index) => (
-                            <TopMatchesCard key={index} match={match} />
+                            <TopMatchesCard key={index} match={match}/>
                         ))}
                     </div>
                 </div>
