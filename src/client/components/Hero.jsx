@@ -3,29 +3,29 @@ import TopMatchesCard from './TopMatchesCard';
 import { Link } from 'react-router-dom';
 const Hero = () => {
     const topMatches = [
-        { name: 'Team A vs Team B', score: '2-1', image: '/assets/images/match-1.jpg' },
-        { name: 'Team C vs Team D', score: '3-2', image: '/assets/images/match-2.jpg' },
-        { name: 'Team E vs Team F', score: '1-1', image: '/assets/images/match-3.jpg' },
+        { name: 'Australia vs India', score: '178-119', image: '/assets/images/sp-4.jpg' },
+        { name: 'Australia vs India(Women)', score: '145-200', image: '/assets/images/sp-5.jpg' },
+        { name: 'Team E vs Team F', score: '1-3', image: '/assets/images/sp-3.jpeg' },
     ];
     const popularEvents = [
         {
             _id: '1',
             imageUrl: '/assets/images/sp-2.jpg',
-            title: 'Marathon Championship',
+            title: 'Cricket',
             startDateTime: '2024-12-15T09:00:00',
             isFree: false,
             price: 2500,
-            category: { name: 'Sports' },
+            category: { name: 'Cricket' },
             organizer: { firstName: 'John', lastName: 'Doe', _id: '123' },
         },
         {
             _id: '2',
-            imageUrl: '/assets/images/sp-3.jpeg',
-            title: 'Football Finals',
+            imageUrl: '/assets/images/sp-6.webp',
+            title: 'Marathon Championship',
             startDateTime: '2024-12-20T18:00:00',
             isFree: true,
             price: 0,
-            category: { name: 'Football' },
+            category: { name: 'Marathon' },
             organizer: { firstName: 'Alice', lastName: 'Smith', _id: '124' },
         },
         {
